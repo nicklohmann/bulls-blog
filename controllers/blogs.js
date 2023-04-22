@@ -1,4 +1,4 @@
-import { Profile } from "../models/profile.js"
+import { Profile } from "../models/blog.js"
 
 function index(req, res) {
   Profile.find({})
