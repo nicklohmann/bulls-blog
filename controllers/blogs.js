@@ -1,11 +1,11 @@
-import { Profile } from "../models/blog.js"
+import { Blog } from "../models/blog.js"
 
 function index(req, res) {
-  Profile.find({})
-  .then(profiles => {
-    res.render('profiles/index' , {
-      profiles,
-      title: 'Profile Index'
+  Blog.find({})
+  .then(blogs => {
+    res.render('blogs/index' , {
+      blogs,
+      title: 'Blog Index'
     })
   })
     .catch(err => {
@@ -16,11 +16,11 @@ function index(req, res) {
   
 }
 function show(req, res) {
-  Profile.findById(req.params.profileId)
-  .then(profile => {
-    res.render('profiles/show' , {
-      profile,
-      title: 'Profile Details'
+  Blog.findById(req.params.blogId)
+  .then(blog => {
+    res.render('blogs/show' , {
+      blog,
+      title: 'Blog Details'
     })
   })
     .catch(err => {
