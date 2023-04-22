@@ -1,9 +1,15 @@
 import { Blog } from "../models/blog.js"
 
+function newBlog(req, res) {
+  res.render('blogs/new' , {
+    title: 'Add Post'
+  })
+}
+
 function index(req, res) {
   Blog.find({})
   .then(blogs => {
-    res.render('blogs/index' , {
+    res.render('blogs' , {
       blogs,
       title: 'Blog Index'
     })
@@ -15,8 +21,23 @@ function index(req, res) {
     })
   
 }
+
+function create(req, res) {
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }
+  Blog.create(req.body)
+  .then(blog => {
+    res.redirect(`/blogs/`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/blogs/new')
+  })
+
+}
 function show(req, res) {
-  Blog.findById(req.params.blogId)
+  Blog.findById(req.params.BlogId)
   .then(blog => {
     res.render('blogs/show' , {
       blog,
@@ -31,7 +52,12 @@ function show(req, res) {
 }
 
 
+
+
 export {
+  newBlog as new,
   index,
+  create,
   show,
+  
 }

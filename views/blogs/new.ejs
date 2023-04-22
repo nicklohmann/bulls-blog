@@ -1,0 +1,17 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/style.css">
+<%- include('../partials/nav') %>
+
+<main>
+<h1> Add Post </h1>
+
+<h1><%= title %></h1>
+  <form id="new-form" action="/blogs" method="POST">
+    <label for="title-input">Title:</label>
+    <input type="text" name="title" id="title-input">
+    <label for="release-year-input">Content:</label>
+    <input type="text" name="content" id="content-input">
+    <button type="submit">Add Blog</button>
+  </form>
+</main>
+<%- include('../partials/footer') %>
