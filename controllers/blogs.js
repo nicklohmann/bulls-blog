@@ -64,6 +64,9 @@ function edit(req, res) {
   })
 }
 function update(req, res) {
+  console.log(req.params.blogId);
+  console.log(req.body);
+  req.body.done = !!req.body.done
   Blog.findByIdAndUpdate(req.params.blogId, req.body, {new: true})
   .then(blog => {
     res.redirect(`/blogs/${blog._id}`)
