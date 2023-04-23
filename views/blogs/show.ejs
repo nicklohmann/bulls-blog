@@ -1,8 +1,18 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/style.css">
 <%- include('../partials/nav') %>
-
+<main>
 <h1> blogs Show View of : <% title %> </h1>
+<section>
+  <div>Title: </div>
+  <div>
+    <%= blog.title %>
+    <a href="/blogs/<%= blog._id %>/edit">
+      <button>Edit Post</button>
+    </a>
+  </div>
+</section>
+</main>
 
 
 
