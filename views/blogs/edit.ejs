@@ -2,8 +2,30 @@
 <link rel="stylesheet" href="/stylesheets/style.css">
 <%- include('../partials/nav') %>
 <main>
-<h1> blogs Edit View of : <% title %> </h1>
-
-</main>
-
+  <h1> blogs Edit View of : <% title %> </h1>
+  <section>
+    <div>Title: <%= blog.title %>
+      </a>
+    </div>
+    <div>
+      <%= blog.content %>    
+    </div>
+    <form
+      id="new-form"
+      action="/blogs/<%= blog._id %>?_method=PUT" 
+      method="POST"
+    >
+    <label for="title-input">Title: </label>
+    <input type="text" name="title" value="<%= blog.title %>" id="title-input">
+    <label for="content-input">Content: </label>
+      <input 
+      type="text"
+      name="Content"
+      value="<%= blog.content %>"
+      id="content-input"
+      >
+      <button type="submit">Save Changes</button>
+    </form>
+  </section>
+  </main>
 <%- include('../partials/footer') %>

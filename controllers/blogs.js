@@ -63,6 +63,16 @@ function edit(req, res) {
     res.redirect('/blogs')
   })
 }
+function update(req, res) {
+  Blog.findByIdAndUpdate(req.params.blogId, req.body, {new: true})
+  .then(blog => {
+    res.redirect(`/blogs/${blog._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/blogs')
+  })
+}
 
 
 
@@ -72,4 +82,5 @@ export {
   create,
   show,
   edit,
+  update,
 }

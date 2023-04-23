@@ -4,12 +4,14 @@
 <main>
 <h1> blogs Show View of : <% title %> </h1>
 <section>
-  <div>Title: </div>
-  <div>
-    <%= blog.title %>
+  <div>Title: <%= blog.title %>
     <a href="/blogs/<%= blog._id %>/edit">
       <button>Edit Post</button>
     </a>
+  </div>
+    
+  <div>
+    <%= blog.content %>    
   </div>
 </section>
 </main>
