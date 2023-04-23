@@ -5,6 +5,16 @@
 <h1> blogs Show View of : <% title %> </h1>
 <section>
   <div>Title: <%= blog.title %>
+    <% if (blog.tags.length) { %>
+      <ul>
+        <% blog.tags.forEach(tagSelected => { %>
+          <li><%= tag.name %></li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p>No tags added</p>
+    <% } %>
+  <div>Tags: <%= blog.tags %></div>
     <% if (blog.creator.equals(user?.profile._id)) { %>
     <a href="/blogs/<%= blog._id %>/edit">
       <button>Edit Post</button>
