@@ -6,7 +6,7 @@ const router = Router()
 router.get('/' , blogsCtrl.index)
 router.get('/new' , blogsCtrl.new)
 router.get('/:blogId' , blogsCtrl.show)
-
+router.get('/:blogId/edit' , blogsCtrl.edit)
 
 //POST
 router.post('/' , blogsCtrl.create)

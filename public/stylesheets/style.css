@@ -40,3 +40,10 @@ main {
 .right {
   margin-left: auto;
 }
+/* nav > section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 10px;
+
+} */

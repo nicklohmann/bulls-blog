@@ -37,7 +37,7 @@ function create(req, res) {
 
 }
 function show(req, res) {
-  Blog.findById(req.params.BlogId)
+  Blog.findById(req.params.blogId)
   .then(blog => {
     res.render('blogs/show' , {
       blog,
@@ -50,7 +50,19 @@ function show(req, res) {
       res.redirect('/')
     })
 }
-
+function edit(req, res) {
+  Blog.findById(req.params.blogId)
+  .then( blog=> {
+    res.render('blogs/edit', {
+      blog,
+      title: 'Edit Blog'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/blogs')
+  })
+}
 
 
 
@@ -59,5 +71,5 @@ export {
   index,
   create,
   show,
-  
+  edit,
 }
