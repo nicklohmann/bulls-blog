@@ -5,9 +5,9 @@ const Schema = mongoose.Schema
 const blogSchema = new Schema({
   content: String,
   title: String, 
-  creator: { type: Schema.Types.ObjectId, ref: "Profile" }
-
-
+  creator: { type: Schema.Types.ObjectId, ref: "Profile" },
+}, {
+  timestamps: true,
 })
 
 const Blog = mongoose.model('Blog', blogSchema)

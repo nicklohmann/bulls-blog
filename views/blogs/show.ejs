@@ -5,9 +5,11 @@
 <h1> blogs Show View of : <% title %> </h1>
 <section>
   <div>Title: <%= blog.title %>
+    <% if (blog.creator.equals(user?.profile._id)) { %>
     <a href="/blogs/<%= blog._id %>/edit">
       <button>Edit Post</button>
     </a>
+    <% } %>
   </div>
     
   <div>
