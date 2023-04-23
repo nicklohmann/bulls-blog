@@ -73,7 +73,17 @@ function update(req, res) {
     res.redirect('/blogs')
   })
 }
+function deletePost(req, res) {
+  Blog.findByIdAndDelete(req.params.blogId)
+  .then(blog => {
+    res.redirect('/blogs')
+  })
+  .catch(error => {
+    console.log(error);
+    res.redirect('/blogs')
+  })
 
+}
 
 
 export {
@@ -83,4 +93,5 @@ export {
   show,
   edit,
   update,
+  deletePost as delete,
 }

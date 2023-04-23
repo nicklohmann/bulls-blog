@@ -5,7 +5,8 @@
   <h1> blogs Edit View of : <% title %> </h1>
   <section>
     <div>Title: <%= blog.title %>
-      </a>
+
+      <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST"><button>Delete Post</button></form>
     </div>
     <div>
       <%= blog.content %>    

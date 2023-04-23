@@ -10,7 +10,10 @@ router.get('/:blogId/edit' , blogsCtrl.edit)
 
 //POST
 router.post('/' , blogsCtrl.create)
-router.put('/blogs/:blogId' , blogsCtrl.update)
+router.put('/:blogId' , blogsCtrl.update)
+
+//DELETE
+router.delete('/:blogId' , blogsCtrl.delete)
 
 
 export {
