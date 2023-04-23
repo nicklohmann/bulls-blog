@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 const blogSchema = new Schema({
   content: String,
   title: String, 
+  tags: [{type: Schema.Types.ObjectId, ref: "Tag"}],
   creator: { type: Schema.Types.ObjectId, ref: "Profile" },
 }, {
   timestamps: true,
