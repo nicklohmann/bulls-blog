@@ -14,7 +14,7 @@ router.post('/:blogId/comments' , isLoggedIn, blogsCtrl.addComment)
 router.post('/' , isLoggedIn, blogsCtrl.create)
 router.post('/:blogId/tags', isLoggedIn , blogsCtrl.addTagToPost)
 router.put('/:blogId' , isLoggedIn, blogsCtrl.update)
-
+router.put('/:blogId/comments/:commentId' , isLoggedIn , blogsCtrl.updateComment)
 //DELETE
 router.delete('/:blogId' ,isLoggedIn, blogsCtrl.delete)
 

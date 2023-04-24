@@ -24,7 +24,7 @@ function index(req, res) {
 }
 
 function create(req, res) {
-  req.body.creator = req.user.profile._id
+  req.body.author = req.user.profile._id
   Blog.create(req.body)
     .then(blog => {
       res.redirect(`/blogs/`)
@@ -38,7 +38,7 @@ function create(req, res) {
 function show(req, res) {
   Blog.findById(req.params.blogId)
     .populate([
-      {path: "creator"},
+      {path: "author"},
       {path: "comments.author"}
     ])
     .then(blog => {
@@ -120,7 +120,7 @@ let { tagsId } = req.body
 function addComment(req,res) {
   Blog.findById(req.params.blogId)
   .then(blog => {
-    req.body.creator = req.user.profile._id
+    req.body.author = req.user.profile._id
     blog.comments.push(req.body)
     blog.save()
     .then(()=> {
@@ -156,6 +156,31 @@ function editComment(req, res){
     res.redirect('/blogs')
   })
 }
+function updateComment(req, res) {
+  Blog.findById(req.params.blogId)
+  .then(blog => {
+    const comment = blog.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      comment.set(req.body)
+      blog.save()
+      .then(() => {
+        res.redirect(`/blogs/${blog._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/blogs')
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/blogs')
+  })
+}
+
+
 
 export {
   newBlog as new,
@@ -167,5 +192,6 @@ export {
   deletePost as delete,
   addTagToPost,
   addComment,
-  editComment
+  editComment,
+  updateComment,
 }

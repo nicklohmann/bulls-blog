@@ -19,15 +19,41 @@ body {
     'Helvetica Neue', sans-serif;
   margin: 0;
 }
+#landings{
 
+}
+footer > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 24px;
+}
 nav {
   background-color: #924b4b;
   color: black;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  padding: 10px;
+  justify-content: space-around;
+  padding: 0px 24px;
   border-color: red;
   min-height: 60px;
+}
+nav button {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #000000;
+  font-weight: 500;
+}
+nav > div {
+
+}
+nav >div:first-child {
+  display: flex;
+}
+nav >div:last-child {
+  display: flex;
 }
 
 main {
@@ -39,6 +65,16 @@ main {
 
 .right {
   margin-left: auto;
+}
+footer{
+  background-color: #924b4b;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 10px;
+  border-color: red;
+  min-height: 100vh;
 }
 /* nav > section{
   display: flex;
