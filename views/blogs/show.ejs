@@ -29,6 +29,14 @@
     <button type="submit">Add to Post</button>
   </form>
     <% } %>
+    <h4>Comments</h4>
+    <% if (user) {%>
+      <h5>Add a comment</h5>
+      <form action="/blogs/<%= blog._id %>comments" method="POST">
+        <textarea name="content"></textarea><br>
+        <button>Add Comment</button>
+      </form>
+      <% } %>
   </div>
     
   <div>

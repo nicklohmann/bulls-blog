@@ -114,6 +114,26 @@ let { tagsId } = req.body
       res.redirect("/blogs")
     })
 }
+function addComment(req,res) {
+  Blog.findById(req.params.blogId)
+  .then(blog => {
+    req.body.creator = req.user.profile._id
+    blog.comments.push(req.body)
+    blog.save()
+    .then(()=> {
+      res.redirect(`/blogs/${blog._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/blogs')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/blogs')
+  })
+
+}
 
 export {
   newBlog as new,
@@ -124,4 +144,5 @@ export {
   update,
   deletePost as delete,
   addTagToPost,
+  addComment
 }
