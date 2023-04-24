@@ -8,7 +8,7 @@
     <% if (blog.tags.length) { %>
       <ul>
         <% blog.tags.forEach(tagSelected => { %>
-          <li><%= tag.name %></li>
+          <li><%= tagSelected.name %></li>
         <% }) %>
       </ul>
     <% } else { %>
@@ -19,6 +19,15 @@
     <a href="/blogs/<%= blog._id %>/edit">
       <button>Edit Post</button>
     </a>
+    <h3>Add Tags</h3>
+  <form action="/blogs/<%= blog._id %>/tags" method="POST">
+    <select name="tagId" >
+      <% tags.forEach(tag => { %>
+      <option value="<%= tag._id %>"><%= tag.name %></option>
+      <% }) %>
+    </select>
+    <button type="submit">Add to Post</button>
+  </form>
     <% } %>
   </div>
     

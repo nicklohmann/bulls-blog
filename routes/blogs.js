@@ -10,6 +10,7 @@ router.get('/:blogId/edit' , blogsCtrl.edit)
 
 //POST
 router.post('/' , blogsCtrl.create)
+router.post('/:blogId/tags' , blogsCtrl.addTagToPost)
 router.put('/:blogId' , blogsCtrl.update)
 
 //DELETE

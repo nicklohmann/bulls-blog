@@ -1,12 +1,14 @@
 import { Tag } from "../models/tag.js"
+import { Blog } from "../models/blog.js"
 
 function newTag(req, res) {
   Tag.find({})
   .then(tags => {
-    res.render('tags/add') , {
-      title: 'Add Tag',
+    res.render('tags/new', {
+      title: 'Add Tag' ,
       tags
-    }
+    })
+
   })
   .catch(err => {
     console.log(err)

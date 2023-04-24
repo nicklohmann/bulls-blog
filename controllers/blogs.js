@@ -91,9 +91,29 @@ function deletePost(req, res) {
       console.log(error);
       res.redirect('/blogs')
     })
-
 }
+function addTagToPost(req, res) {
+let { blogId } = req.params
+let { tagsId } = req.body
+  Blog.findById(blogId)
+    .then((blog) => {
+      blog.tags.push(req.body.tagsId)
+      blog
+        .save()
+        .then(() => {
+          res.redirect(`/blogs/${blog._id}`)
+        })
+        .catch((err) => {
+          console.log(err)
 
+          res.redirect("/blogs")
+        })
+    })
+    .catch((err) => {
+      console.log(err)
+      res.redirect("/blogs")
+    })
+}
 
 export {
   newBlog as new,
@@ -103,4 +123,5 @@ export {
   edit,
   update,
   deletePost as delete,
+  addTagToPost,
 }
