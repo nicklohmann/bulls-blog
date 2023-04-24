@@ -37,19 +37,22 @@ function create(req, res) {
 }
 function show(req, res) {
   Blog.findById(req.params.blogId)
-    .populate('tags')
+    .populate([
+      {path: "creator"},
+      {path: "comments.author"}
+    ])
     .then(blog => {
       Tag.find({ _id: { $nin: blog.tags } })
         .then(tags => {
           res.render('blogs/show', {
             blog,
             title: 'Blog Details',
-            tags
+            tags,
           })
         })
         .catch(err => {
           console.log(err)
-          res.sen("TAG INFO NOT FOUND")
+          res.send("TAG INFO NOT FOUND")
           res.redirect("/blogs")
         })
     })
@@ -134,6 +137,25 @@ function addComment(req,res) {
   })
 
 }
+function editComment(req, res){
+  Blog.findById(req.params.blogId)
+  .then(blog => {
+    const comment = blog.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      res.render('blogs/editComment', {
+        blog, 
+        comment,
+        title: 'Update Comment'
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/blogs')
+  })
+}
 
 export {
   newBlog as new,
@@ -144,5 +166,6 @@ export {
   update,
   deletePost as delete,
   addTagToPost,
-  addComment
+  addComment,
+  editComment
 }

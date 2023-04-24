@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const commentSchema = new Schema({
   content: String,
-  creator: { type: Schema.Types.ObjectId, ref: "Profile"}
+  author: { type: Schema.Types.ObjectId, ref: "Profile"}
 })
 
 const blogSchema = new Schema({
