@@ -47,13 +47,19 @@ nav button {
   font-weight: 500;
 }
 nav > div {
-
+  display: flex;
+  height: 80px;
+  align-items: center;
+  cursor: text;
 }
 nav >div:first-child {
   display: flex;
+  align-self: center;
+  gap: 32px;
 }
 nav >div:last-child {
   display: flex;
+  gap: 16px;
 }
 
 main {
