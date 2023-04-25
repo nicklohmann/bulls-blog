@@ -86,10 +86,18 @@ footer{
   color: white;
   display: flex;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: flex-start;
   padding: 10px;
   border-color: red;
   min-height: 100vh;
+}
+footer > button {
+  background-color: #924b4b;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: white;
+  font-weight: 500;
+  size: 200px;
 }
 div #Title {
   display: flex;
