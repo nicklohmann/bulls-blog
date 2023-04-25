@@ -18,6 +18,9 @@ body {
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 section {
   height: 650px;
@@ -26,25 +29,21 @@ section {
   justify-content: space-around;
   text-align: center;
 }
-#Title > p,
-#Author > p  {
-  text-align: center;
-  font-size: large;
-}
+
 footer > div {
   display: flex;
   justify-content: space-between;
   padding: 0px 24px;
 }
 nav {
-  background-color: #924b4b;
+  background-color: #CE1141;
   color: black;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   padding: 0px 24px;
-  border-color: red;
+  border-color: #CE1141;
   min-height: 60px;
 }
 nav button {
@@ -82,17 +81,17 @@ main {
   margin-left: auto;
 }
 footer{
-  background-color: #924b4b;
+  background-color: #CE1141;
   color: white;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   padding: 10px;
-  border-color: red;
-  min-height: 100vh;
+  border-color: #CE1141;
+  margin-top: auto;
 }
 footer > button {
-  background-color: #924b4b;
+  background-color: #CE1141;
   border-radius: 8px;
   padding: 10px 16px;
   color: white;
