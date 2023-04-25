@@ -3,14 +3,16 @@
 <%- include('../partials/nav') %>
 
 <main>
-<h1> Add Post </h1>
+
 
 <h1><%= title %></h1>
   <form id="new-form" action="/blogs" method="POST">
     <label for="title-input">Title:</label>
     <input type="text" name="title" id="title-input">
+    <br><br>
     <label for="release-year-input">Content:</label>
     <input type="text" name="content" id="content-input">
+    <br><br>
     <button type="submit">Add Blog</button>
   </form>
 </main>

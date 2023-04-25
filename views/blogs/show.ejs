@@ -2,67 +2,72 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
   <%- include('../partials/nav') %>
     <main>
-      <h1> <%= blog.title %>
+      <h1>
+        <%= blog.title %>
       </h1>
-      <section id="blog Post"> 
-          <p id="Author">Author: <%= blog.author.name %></p>
-          <p>
-            <%= blog.content %>
-          </p>
-          <% if (blog.author.equals(user?.profile._id)) { %>
-            <a href="/blogs/<%= blog._id %>/edit">
-              <button>Edit Post</button>
-            </a>
-            <% if (blog.tags.length) { %>
-              <ul>
-                <% blog.tags.forEach(tagSelected=> { %>
-                  <li>
-                    <%= tagSelected.name %>
-                  </li>
-                  <% }) %>
-              </ul>
-              <% } else { %>
-                <p>No tags added</p>
-                <% } %>
-                  <ul>
-                    <% blog.comments?.forEach(comment=> { %>
-                      <li>
-                        <%= comment.content %> - <%= comment.name %>
-                            <% if (user) {%>
-                              <form action="/blogs/<%= blog._id %>/comments/<%= comment._id %>?_method=PUT"
-                                method="POST">
-                                <label>
-                                  Content:
-                                  <textarea cols="30" rows="5" type="text" name="content"
-                                    autocomplete="off"><%= comment.content %></textarea>
-                                </label>
-                                <button type="submit">Update Comment</button>
-                              </form>
+      <section id="blog Post">
+
+        <p id="Author">
+          <img src="<%= blog.author.avatar %>">
+          <br>
+          Author: <%= blog.author.name %>
+        </p>
+        <p>
+          <%= blog.content %>
+        </p>
+        <% if (blog.author.equals(user?.profile._id)) { %>
+          <a href="/blogs/<%= blog._id %>/edit">
+            <button>Edit Post</button>
+          </a>
+          <% if (blog.tags.length) { %>
+            <ul>
+              <% blog.tags.forEach(tagSelected=> { %>
+                <li>
+                  <%= tagSelected.name %>
+                </li>
+                <% }) %>
+            </ul>
+            <% } else { %>
+              <p>No tags added</p>
+              <% } %>
+                <ul>
+                  <% blog.comments?.forEach(comment=> { %>
+                    <li>
+                      <%= comment.content %> - <%= comment.name %>
+                          <% if (user) {%>
+                            <form action="/blogs/<%= blog._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+                              <label>
+                                Content:
+                                <textarea cols="30" rows="5" type="text" name="content"
+                                  autocomplete="off"><%= comment.content %></textarea>
+                              </label>
+                              <button type="submit">Update Comment</button>
+                            </form>
                             <% } %>
-                      </li>
+                    </li>
+                    <% }) %>
+                </ul>
+                <div>Tags: <%= blog.tags %>
+                </div>
+                <h3>Add Tags</h3>
+                <form action="/blogs/<%= blog._id %>/tags" method="POST">
+                  <select name="tagId">
+                    <% tags.forEach(tag=> { %>
+                      <option value="<%= tag._id %>">
+                        <%= tag.name %>
+                      </option>
                       <% }) %>
-                  </ul>
-                  <div>Tags: <%= blog.tags %>
-                  </div>
-                    <h3>Add Tags</h3>
-                    <form action="/blogs/<%= blog._id %>/tags" method="POST">
-                      <select name="tagId">
-                        <% tags.forEach(tag=> { %>
-                          <option value="<%= tag._id %>">
-                            <%= tag.name %>
-                          </option>
-                          <% }) %>
-                      </select>
-                      <button type="submit">Add to Post</button>
+                  </select>
+                  <button type="submit">Add to Post</button>
+                </form>
+                <% } %>
+                  <% if (user) {%>
+                    <form action="/blogs/<%= blog._id %>/comments" method="POST">
+                      <textarea name="content"></textarea><br>
+                      <button>Add Comment</button>
                     </form>
                     <% } %>
-                      <% if (user) {%>
-                        <form action="/blogs/<%= blog._id %>/comments" method="POST">
-                          <textarea name="content"></textarea><br>
-                          <button>Add Comment</button>
-                        </form>
-                        <% } %>
-        </div>
+                      </div>
       </section>
     </main>
 
