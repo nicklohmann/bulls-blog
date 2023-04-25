@@ -19,8 +19,17 @@ body {
     'Helvetica Neue', sans-serif;
   margin: 0;
 }
-#landings{
-
+section {
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+#Title > p,
+#Author > p  {
+  text-align: center;
+  font-size: large;
 }
 footer > div {
   display: flex;
@@ -82,6 +91,11 @@ footer{
   border-color: red;
   min-height: 100vh;
 }
+div #Title {
+  display: flex;
+  font-size: 75px;
+}
+
 /* nav > section{
   display: flex;
   justify-content: space-between;

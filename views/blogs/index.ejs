@@ -4,7 +4,9 @@
 <main>
 <h1> Blog Index View </h1>
 <% blogs.forEach(blog => { %>
-<a href="/blogs/<%= blog._id %>"><%= blog.title %></a><br>
+<a href="/blogs/<%= blog._id %>"<%= blog.title %>>
+  <button><%= blog.title %> - <%= blog.author.name %></button>
+</a><br>
 <% }) %>
 </main>
 <%- include('../partials/footer') %>

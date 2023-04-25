@@ -2,10 +2,13 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
   <%- include('../partials/nav') %>
     <main>
-      <h1> blogs Show View of : <% title %>
+      <h1> <%= blog.title %>
       </h1>
-      <section>
-        <div>Title: <%= blog.title %>
+      <section id="blog Post"> 
+          <p id="Author">Author: <%= blog.author.name %></p>
+          <p>
+            <%= blog.content %>
+          </p>
           <% if (blog.author.equals(user?.profile._id)) { %>
             <a href="/blogs/<%= blog._id %>/edit">
               <button>Edit Post</button>
@@ -54,16 +57,11 @@
                     </form>
                     <% } %>
                       <% if (user) {%>
-                        <h5>Add a comment</h5>
                         <form action="/blogs/<%= blog._id %>/comments" method="POST">
                           <textarea name="content"></textarea><br>
                           <button>Add Comment</button>
                         </form>
                         <% } %>
-        </div>
-
-        <div>
-          <%= blog.content %>
         </div>
       </section>
     </main>
