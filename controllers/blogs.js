@@ -179,6 +179,29 @@ function updateComment(req, res) {
     res.redirect('/blogs')
   })
 }
+function deleteComment(req, res) {
+  Blog.findById(req.params.blogId)
+  .then(blog => {
+    const comment = blog.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      blog.comments.remove(comment)
+      blog.save()
+      .then(() => {
+        res.redirect(`/blogs/${blog._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/blogs')
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/blogs')
+  })
+}
 
 
 
@@ -194,4 +217,5 @@ export {
   addComment,
   editComment,
   updateComment,
+  deleteComment
 }

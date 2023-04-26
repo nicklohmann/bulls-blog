@@ -8,7 +8,7 @@ router.get('/' , blogsCtrl.index)
 router.get('/new', isLoggedIn , blogsCtrl.new)
 router.get('/:blogId' , blogsCtrl.show)
 router.get('/:blogId/edit', isLoggedIn , blogsCtrl.edit)
-router.get('/:blogId/:commentId/edit' , isLoggedIn , blogsCtrl.editComment)
+router.get('/:blogId/comments/:commentId/edit' , isLoggedIn , blogsCtrl.editComment)
 //POST
 router.post('/:blogId/comments' , isLoggedIn, blogsCtrl.addComment)
 router.post('/' , isLoggedIn, blogsCtrl.create)
