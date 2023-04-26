@@ -79,6 +79,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: auto;
 }
 
 .right {
@@ -102,9 +103,31 @@ footer > button {
   font-weight: 500;
   size: 200px;
 }
+#commentEdits  {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+#btn {
+  display: flex;
+  flex-direction: row;
+  background-color: #CE1141;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: black;
+  font-weight: 500;
+  size: 100px;
+}
 div #Title {
   display: flex;
   font-size: 75px;
+}
+#commentbtns {
+  color: black;
+  background-color: #CE1141;
+  font-size: 33px;
+  padding: 0px
 }
 #footer-buttons {
   color: black;
@@ -114,7 +137,11 @@ div #Title {
 #Direct {
   background-color: #CE1141;
 }
-
+#CommentSubmission {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
 #Author, #Comment {
   display: flex;
   flex-direction: column;
@@ -123,7 +150,6 @@ div #Title {
   align-items: center;
   align-self: center;
 }
-
 
 /* nav > section{
   display: flex;

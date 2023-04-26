@@ -19,23 +19,24 @@
         <% if (user) {%>
           <ul id="Comment">
             <% blog.comments?.forEach(comment=> { %>
-              <li>
+              <li id="commentEdits">
                 <%= comment.content %> - <%= comment.author.name %>
                     <% if (comment.author.equals(user?.profile)) { %>
                       <form action="/blogs/<%= blog._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST"
                         class="inline">
-                        <button class="btn" type="submit">Delete Comment</button>
+                        <button id="Direct" type="submit"><i id="commentbtns"
+                            class="fa-regular fa-trash fa"></i></button>
                       </form>
-                      <a href="/blogs/<%= blog._id %>/comments/<%= comment._id %>/edit">
-                        <button class="btn">Edit Comment</button>
-                      </a>
+                      <form action="/blogs/<%= blog._id %>/comments/<%= comment._id %>/edit">
+                        <button id="Direct" type="submit"><i id="commentbtns" class="fa-sharp fa-solid fa-pen-to-square"></i></button>
+                      </form>
                       <% } %>
               </li>
               <% }) %>
           </ul>
-          <form id="Comment" action="/blogs/<%= blog._id %>/comments" method="POST">
-            <textarea id="contentarea" name="content"></textarea><br>
-            <button id="CommentButton">Add Comment</button>
+          <form id="CommentSubmission" action="/blogs/<%= blog._id %>/comments" method="POST">
+            <textarea id="contentarea" name="content">Write Your Comment Here</textarea><br>
+            <button id="Direct"><i class="fa-solid fa-comment"></i></button>
           </form>
           <% } %>
             </div>
