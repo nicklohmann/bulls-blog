@@ -1,5 +1,5 @@
 ### Bull-Blog
-![finishedBoard](https://user-images.githubusercontent.com/77218350/230572573-52dbf180-bd47-4312-a593-e08e684c8902.PNG)
+![FirstDraftPic](https://user-images.githubusercontent.com/77218350/234652501-2416cebb-dc08-4ab5-9d17-9cf532324c17.PNG)
 
 
 
@@ -16,9 +16,7 @@ Bulls-blog is a simple blog website for bulls fans around the world to share the
   
 **Credits:**
 
-Favicon https://www.nicepng.com/maxp/u2e6u2t4w7y3y3o0/
-
-For the color palette used: https://catseyeranch.com/tag/1958-cold-war-color-palette/
+Favicon https://1000logos.net/chicago-bulls-logo/
 
 **IceBox Items:**
 
