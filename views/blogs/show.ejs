@@ -10,7 +10,7 @@
         <p id="Author">
           <img src="<%= blog.author.avatar %>">
           <br>
-          Author: <%= blog.author.name %>
+          <a href="/<%  %>"></a> <%= blog.author.name %>
         </p>
         <p>
           <%= blog.content %>
@@ -60,11 +60,20 @@
                   </select>
                   <button type="submit">Add to Post</button>
                 </form>
+                <div>
+                <ul>
+                  <% blog.comments?.forEach(comment => { %>
+                    <li>
+                      <%= comment.content %> - <%= comment.author.name %>
+                    </li> 
+                  <% }) %>
+                </ul>
+                </div>
                 <% } %>
                   <% if (user) {%>
-                    <form action="/blogs/<%= blog._id %>/comments" method="POST">
-                      <textarea name="content"></textarea><br>
-                      <button>Add Comment</button>
+                    <form id="Comment" action="/blogs/<%= blog._id %>/comments" method="POST">
+                      <textarea id="contentarea" name="content"></textarea><br>
+                      <button id="CommentButton">Add Comment</button>
                     </form>
                     <% } %>
                       </div>

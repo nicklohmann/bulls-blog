@@ -20,10 +20,11 @@ function show(req, res) {
   .then(profile => {
     res.render('profiles/show' , {
       profile,
-      title: 'Profile Details'
+      title: 'Profile Details',
     })
   })
     .catch(err => {
+      console.log(req.params);
       console.log(err)
       console.log('SHOW ERROR');
       res.redirect('/')
