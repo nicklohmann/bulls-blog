@@ -46,24 +46,14 @@ function create(req, res) {
 }
 function show(req, res) {
   Blog.findById(req.params.blogId)
-    .populate([
-      {path: "author"},
-      {path: "comments.author"}
-    ])
+    .populate("author")
+    .populate("comments.author")
+    .populate("tags")
     .then(blog => {
-      Tag.find({ _id: { $nin: blog.tags } })
-        .then(tags => {
           res.render('blogs/show', {
             blog,
             title: 'Blog Details',
-            tags,
           })
-        })
-        .catch(err => {
-          console.log(err)
-          res.send("TAG INFO NOT FOUND")
-          res.redirect("/blogs")
-        })
     })
     .catch(err => {
       console.log(err)

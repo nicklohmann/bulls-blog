@@ -5,6 +5,18 @@
       <h1>
         <%= blog.title %> - <a id="showLink" href="/profiles/<%= blog.author.id %>"><%= blog.author.name %></a>
       </h1>
+      <% if (blog.tags) { %>
+        <br>
+        <p>Tags: 
+          <% blog.tags.forEach((tag, idx) => { %>
+            <% if (idx < blog.tags.length-1) { %>
+              <%= tag.name %> ·
+            <% } else {%>
+              <%= tag.name %> 
+            <% } %>
+          <% }) %>
+        </p>
+      <% } %>
       <section id="blog Post">
         <p>
           <%= blog.content %>

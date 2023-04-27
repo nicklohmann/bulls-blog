@@ -4,10 +4,21 @@
     <main>
       <% if(blogs.length > 0){ %>
       <h1>Showing <%= blogs[0].author.name %>'s Profile</h1>
-      
+      <% blogs.forEach(blog => { %>
+        <div id="">
+          <div id="Blog-Title">
+            <div id="Blog-Author">
+              <img src="<%= blog.author.avatar %>" alt="">
+              <%= blog.name %>
+            </div>
+            <%= blog.name %>
+          </div>
+
+        </div>
 
 
 
+      <% }) %>
       <% } %>
       
 
