@@ -63,10 +63,15 @@ function show(req, res) {
 }
 function edit(req, res) {
   Blog.findById(req.params.blogId)
+  .populate("tags")
     .then(blog => {
+      Tag.find({})
+      .then(tags => {
       res.render('blogs/edit', {
         blog,
-        title: 'Edit Blog'
+        title: 'Edit Blog',
+        tags
+      })
       })
     })
     .catch(err => {

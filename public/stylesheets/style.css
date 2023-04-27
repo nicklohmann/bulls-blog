@@ -27,13 +27,22 @@ section {
   height: 650px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content:space-evenly;
+  align-items: flex-start;
+  text-align: flex-start;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+#EidtPostPage {
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
   text-align: center;
   margin-left: 30px;
   margin-right: 30px;
 }
-
 
 footer > div {
   display: flex;

@@ -3,7 +3,7 @@
 <%- include('../partials/nav') %>
 <main>
   <h1><%= blog.title %></h1>
-  <section>
+  <section id="EditPostPage">
     <div>
 
       <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST"><button id="Direct" type="submit"><i id="commentbtns"
@@ -17,13 +17,21 @@
       action="/blogs/<%= blog._id %>?_method=PUT" 
       method="POST"
     >
+    <fieldset id="tagChecker">
+      <% tags.forEach(tag => { %>
+        <input type="checkbox" name="tags" value="<%= tag._id %>" <%= blog.tags.some(tagsecleted => tagsecleted.name === tag.name) ? 'checked' : ''%>> <%= tag.name %> <br>
+        <% }) %>
+    </fieldset>
     <label for="title-input">Title: </label>
     <input type="text" name="title" value="<%= blog.title %>" id="title-input">
     <label for="content-input">Content: </label>
     <input type="text"name="content"value="<%= blog.content %>"id="content-input"
       >
       <button id="Direct" type="submit"><i id="commentbtns" class="fa-sharp fa-solid fa-pen-to-square"></i></button>
+    </section>
+      
     </form>
-  </section>
+    
+  
   </main>
 <%- include('../partials/footer') %>
