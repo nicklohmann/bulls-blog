@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/stylesheets/main.css">
 <%- include('../partials/nav') %>
 <main>
-<h1> Blog Index View </h1>
+<h1> Recent Posts </h1>
 <% blogs.forEach(blog => { %>
 <a href="/blogs/<%= blog._id %>"<%= blog.title %>>
   <button><%= blog.title %> - <%= blog.author.name %></button>
