@@ -3,8 +3,25 @@
   <%- include('../partials/nav') %>
     <main>
       <h1>
-        <%= blog.title %> - <a href="/profiles/<%= blog.author.id %>"><%= blog.author.name %></a>
+        <%= blog.title %> - <a id="showLink" href="/profiles/<%= blog.author.id %>"><%= blog.author.name %></a>
       </h1>
+      <% if (blog.author.equals(user?.profile._id)) { %>
+              <% blog.tags.forEach(tags =>{ %>
+              <div>Tags: <%= tags.name %>
+              </div>
+              <% }) %>
+              <h3>Add Tags</h3>
+              <form action="/blogs/<%= blog._id %>/tags" method="POST">
+                <select name="tagId">
+                  <% tags.forEach(tag=> { %>
+                    <option value="<%= tag._id %>">
+                      <%= tag.name %>
+                    </option>
+                    <% }) %>
+                </select>
+                <button type="submit">Add to Post</button>
+              </form>
+              <% } %>
       <section id="blog Post">
         <p id="Author">
           <img src="<%= blog.author.avatar %>">

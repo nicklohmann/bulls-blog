@@ -2,11 +2,10 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
   <%- include('../partials/nav') %>
     <main>
-      <h1> Profile of : <%= profile.name %>
-      </h1>
-      <img src="<%= profile.avatar %>" alt="">
-
+      <% if(blogs.length > 0){ %>
+      <h1>Showing <%= blogs[0].author.name %>'s Profile</h1>
       
+      <% } %>
       
 
 

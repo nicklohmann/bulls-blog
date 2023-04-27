@@ -168,7 +168,10 @@ div #Title {
   align-items: flex-start;
   align-self: center;
   overflow: auto;
-
+}
+#showLink {
+  font-size: large;
+  color: white;
 }
 .button-23 {
   background-color: #FFFFFF;

@@ -1,4 +1,5 @@
 import { Profile } from "../models/profile.js"
+import { Blog } from "../models/blog.js"
 
 function index(req, res) {
   Profile.find({})
@@ -16,11 +17,12 @@ function index(req, res) {
   
 }
 function show(req, res) {
-  Profile.findById(req.params.profileId)
-  .populate("posts")
-  .then(profile => {
+  Blog.find({author: req.params.profileId})
+  .populate('author')
+  .populate('tags')
+  .then(blogs => {
     res.render('profiles/show' , {
-      profile,
+      blogs,
       title: 'Profile Details',
     })
   })
