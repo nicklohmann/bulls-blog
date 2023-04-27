@@ -13,9 +13,10 @@
     <label for="Post-input">Post:</label>
     <input type="text" name="content" id="content-input">
     <br><br>
-    <fieldset>
+    <label for="Tags">Tags:</label>
+    <fieldset id="tagChecker">
       <% tags.forEach(tag => { %>
-        <input type="checkbox" name="tags" value="<%= tag._id %>"> <% tag.name %> <br>
+        <input type="checkbox" name="tags" value="<%= tag._id %>"> <%= tag.name %> <br>
         <% }) %>
     </fieldset>
 

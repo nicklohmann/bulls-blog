@@ -230,7 +230,9 @@ div #Title {
   box-shadow: none;
   transform: translateY(0);
 }
-
+#tagChecker {
+  color: white;
+}
 
 
 /* nav > section{
