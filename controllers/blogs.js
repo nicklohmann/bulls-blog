@@ -2,8 +2,13 @@ import { Blog } from "../models/blog.js"
 import { Tag } from "../models/tag.js"
 
 function newBlog(req, res) {
-  res.render('blogs/new', {
-    title: 'Add Post'
+  Tag.find({})
+  .then(tags => {
+    res.render('blogs/new', {
+      title: 'Add Post',
+      tags
+  })
+  
   })
 }
 

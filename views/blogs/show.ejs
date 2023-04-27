@@ -6,6 +6,7 @@
         <%= blog.title %> - <a id="showLink" href="/profiles/<%= blog.author.id %>"><%= blog.author.name %></a>
       </h1>
       <% if (blog.author.equals(user?.profile._id)) { %>
+              <% if (blog.tags.forEach(tags,i) =>) {%>
               <% blog.tags.forEach(tags =>{ %>
               <div>Tags: <%= tags.name %>
               </div>
@@ -23,11 +24,6 @@
               </form>
               <% } %>
       <section id="blog Post">
-        <p id="Author">
-          <img src="<%= blog.author.avatar %>">
-          <br>
-          <a href="/<%  %>"></a>
-        </p>
         <p>
           <%= blog.content %>
           <% if (blog.author.equals(user?.profile._id)) { %>
