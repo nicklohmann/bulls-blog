@@ -17,6 +17,7 @@ function index(req, res) {
 }
 function show(req, res) {
   Profile.findById(req.params.profileId)
+  .populate("posts")
   .then(profile => {
     res.render('profiles/show' , {
       profile,
