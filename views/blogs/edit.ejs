@@ -2,12 +2,12 @@
 <link rel="stylesheet" href="/stylesheets/style.css">
 <%- include('../partials/nav') %>
 <main>
-  <h1> blogs Edit View of : <% title %> </h1>
+  <h1><%= blog.title %></h1>
   <section>
-    <div>Title: <%= blog.title %>
+    <div>
 
-      <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST"><button>Delete Post</button></form>
-    </div>
+      <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST"><button id="Direct" type="submit"><i id="commentbtns"
+        class="fa-regular fa-trash fa"></i></button>
     <div>
       <%= blog.content %>    
     </div>
@@ -21,7 +21,7 @@
     <label for="content-input">Content: </label>
     <input type="text"name="content"value="<%= blog.content %>"id="content-input"
       >
-      <button type="submit">Save Changes</button>
+      <button id="Direct" type="submit"><i id="commentbtns" class="fa-sharp fa-solid fa-pen-to-square"></i></button>
     </form>
   </section>
   </main>

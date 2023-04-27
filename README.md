@@ -28,6 +28,7 @@ Button Icons https://fontawesome.com/icons
 - [ ] Add dates to posts
 - [ ] Add followers functionality
 - [ ] Add the ability to direct message others on the site
+- [ ] Add different sorting and search options
 
 
 

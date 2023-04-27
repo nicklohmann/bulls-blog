@@ -1,14 +1,14 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-
+<h1 id="EditHeading">Edit your comment!</h1>
 <section>
-  <h1>Edit your comment!</h1>
-  <form 
+  
+  <form id="UpdateComment"
     action="/blogs/<%= blog._id %>/comments/<%= comment._id %>?_method=PUT" 
     method="POST"
   >
     <label>
-      Content: 
+      Comment : 
       <textarea
         cols="30"
         rows="5" 
@@ -17,7 +17,7 @@
         autocomplete="off"
       ><%= comment.content %></textarea>
     </label>
-    <button type="submit">Update Comment</button>
+    <button id="Direct"><i class="fa-solid fa-comment"></i></button>
   </form>
 </section>
 

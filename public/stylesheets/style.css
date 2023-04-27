@@ -143,6 +143,11 @@ div #Title {
   flex-direction: row;
   align-self: center;
 }
+#UpdateComment {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
 #Author, #Comment {
   margin-top: auto;
   display: flex;
@@ -156,7 +161,15 @@ div #Title {
 #showTitle {
   margin-bottom: 50px;
 }
+#EditHeading {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: center;
+  overflow: auto;
 
+}
 .button-23 {
   background-color: #FFFFFF;
   border: 1px solid #222222;
@@ -199,6 +212,24 @@ div #Title {
   cursor: not-allowed;
   opacity: 1;
 }
+#logout:disabled {
+  pointer-events: none;
+}
+
+#logout:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+#logout:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+
+
 /* nav > section{
   display: flex;
   justify-content: space-between;
