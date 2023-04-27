@@ -1,13 +1,10 @@
-# fly.toml app configuration file generated for bulls-blog on 2023-04-25T14:01:15-05:00
+# fly.toml app configuration file generated for cool-snowflake-3554 on 2023-04-27T07:42:01-05:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "bulls-blog"
+app = "cool-snowflake-3554"
 primary_region = "dfw"
-
-[env]
-  PORT = "8080"
 
 [http_service]
   internal_port = 8080

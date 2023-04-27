@@ -9,6 +9,10 @@ function newBlog(req, res) {
 
 function index(req, res) {
   Blog.find({})
+  .populate([
+    {path: "author"},
+    {path: "comments.author"},
+  ])
     .then(blogs => {
       res.render('blogs', {
         blogs,

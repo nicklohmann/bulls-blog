@@ -5,7 +5,7 @@
 <h1> Recent Posts </h1>
 <% blogs.forEach(blog => { %>
 <a href="/blogs/<%= blog._id %>"<%= blog.title %>>
-  <button><%= blog.title %> - <%= blog.author.name %></button>
+  <button class="button-23" role="button"><%= blog.title %> - <%= blog.author.name %></button>
 </a><br>
 <% }) %>
 </main>

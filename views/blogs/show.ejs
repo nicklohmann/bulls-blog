@@ -3,14 +3,13 @@
   <%- include('../partials/nav') %>
     <main>
       <h1>
-        <%= blog.title %>
+        <%= blog.title %> - <a href="/profiles/<%= blog.author.id %>"><%= blog.author.name %></a>
       </h1>
       <section id="blog Post">
         <p id="Author">
           <img src="<%= blog.author.avatar %>">
           <br>
           <a href="/<%  %>"></a>
-          <%= blog.author.name %>
         </p>
         <p>
           <%= blog.content %>
