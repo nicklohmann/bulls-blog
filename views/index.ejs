@@ -4,7 +4,11 @@
 
 <main>
   <h1>Welcome <%= user ? user.profile.name : "" %></h1>
-  <a href="/profiles">Profile List</a>
+  <h2> Access Recent Post or View Profiles <br>
+    <br>
+  <a id="ProfileList" href="/profiles">Profile List</a>
+  <a id="ProfileList" href="/blogs/">Recent Posts</a>
+</h2>
   <% if (user?.profile.avatar) { %>
     <div>
       <img
@@ -12,7 +16,9 @@
         alt="<%= user.profile.name %> avatar"
       />
     </div>
+    
   <% } %>
+
 </main>
 
 <%- include('./partials/footer') %>

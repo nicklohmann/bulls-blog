@@ -1,5 +1,5 @@
 ### Bulls-Blog
-![DraftPic](https://user-images.githubusercontent.com/77218350/235082744-0d6a7194-4886-4f1c-9a6f-ed725afcf89b.PNG)
+[DraftPic2](https://user-images.githubusercontent.com/77218350/235085020-15b119e9-bf59-4f8d-a982-017a0a6035c2.PNG)
 
 
 
