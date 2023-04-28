@@ -2,25 +2,23 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
   <%- include('../partials/nav') %>
     <main>
-      <% if(blogs.length > 0){ %>
-      <h1>Showing <%= blogs[0].author.name %>'s Profile</h1>
-      <% blogs.forEach(blog => { %>
-        <div id="">
+      <% if(blogs.length> 0){ %>
+        <h1>Showing <%= blogs[0].author.name %>'s Profile</h1>
+        <% blogs.forEach(blog=> { %>
           <div id="Blog-Title">
             <div id="Blog-Author">
               <img src="<%= blog.author.avatar %>" alt="">
-              <%= blog.name %>
+              <%= blog.author.name %> - <a id="ProfileList" href="/blogs/<%= blog._id %>"><%= blog.title %></a>
             </div>
-            <%= blog.name %>
+            <%= blog.content %>
           </div>
 
-        </div>
 
 
 
-      <% }) %>
-      <% } %>
-      
+          <% }) %>
+            <% } %>
+
 
 
     </main>

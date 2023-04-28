@@ -242,7 +242,9 @@ div #Title {
 #tagChecker {
   color: white;
 }
-
+#ProfileList {
+  color: white;
+}
 
 /* nav > section{
   display: flex;
