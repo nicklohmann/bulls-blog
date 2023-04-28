@@ -4,7 +4,7 @@
 
 
 ## [Access the Site Here](https://bulls-blog.fly.dev/)
-Bulls-blog is a simple blog website for Bulls fans around the world to share their opinions on the team! From any topic to current team, past performance, future prediction, or even jerseys. Anything Chicago Bulls related is welcome! This website was designed in mind to be mobile friendly to allow fans to easily discuss their thoughts after a game.  This site is a great way to welcome newcomers to the Chicago area, or willing bandwagon fans along the way.
+Bulls-blog is a simple blog website for Bulls fans around the world to share their opinions on the team! From any topic to current team, past performance, future prediction, or even jerseys. Anything Chicago Bulls related is welcome! This website was designed in mind to be mobile-friendly to allow fans to easily discuss their thoughts after a game.  This site is a great way to welcome newcomers to the Chicago area, or willing bandwagon fans along the way.
 
 
 
