@@ -10,8 +10,6 @@ function index(req, res) {
     })
   })
     .catch(err => {
-      console.log(err)
-      console.log('INDEX ERROR');
       res.redirect('/')
     })
   
@@ -27,9 +25,6 @@ function show(req, res) {
     })
   })
     .catch(err => {
-      console.log(req.params);
-      console.log(err)
-      console.log('SHOW ERROR');
       res.redirect('/')
     })
 }

@@ -25,8 +25,6 @@ function index(req, res) {
       })
     })
     .catch(err => {
-      console.log(err)
-      console.log('INDEX ERROR');
       res.redirect('/')
     })
 

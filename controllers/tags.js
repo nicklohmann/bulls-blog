@@ -1,5 +1,4 @@
 import { Tag } from "../models/tag.js"
-import { Blog } from "../models/blog.js"
 
 function newTag(req, res) {
   Tag.find({})
@@ -11,7 +10,6 @@ function newTag(req, res) {
 
   })
   .catch(err => {
-    console.log(err)
     res.redirect('/blogs')
   })
 }
@@ -22,7 +20,6 @@ function create(req, res) {
     res.redirect('/tags/new')
   })
   .catch(err => {
-    console.log(err)
     res.redirect('/tags/new')
   })
 }
